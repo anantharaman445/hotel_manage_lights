@@ -5,6 +5,14 @@ public class Corridor {
     private int airConditioners;
     private int powerConsumptionLight;
     private int powerConsumptionAC;
+    private boolean dayTime;
+
+    Corridor(){
+        this.lights = 1;
+        this.airConditioners = 1;
+        this.powerConsumptionLight = 5;
+        this.powerConsumptionAC = 10;
+    }
 
     public int getLights() {
         return lights;
@@ -36,5 +44,13 @@ public class Corridor {
 
     public void setPowerConsumptionAC(int powerConsumptionAC) {
         this.powerConsumptionAC = powerConsumptionAC;
+    }
+
+    public boolean getIsDayTime() {
+        return dayTime;
+    }
+
+    public void setIsDayTime(boolean dayTime) {
+        this.dayTime = dayTime;
     }
 }
