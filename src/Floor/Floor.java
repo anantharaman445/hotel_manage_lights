@@ -7,18 +7,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Floor {
+
     private List<MainCorridor> mainCorridors;
     private List<SubCorridor> subCorridors;
 
-    public Floor(int mainCorr, int subCorr){
+    public Floor(int mainCorr, int subCorr) {
         mainCorridors = new ArrayList<MainCorridor>();
         subCorridors = new ArrayList<SubCorridor>();
 
-        for(int i=0; i<mainCorr; i++){
+        for (int i = 0; i < mainCorr; i++) {
             mainCorridors.add(new MainCorridor());
         }
 
-        for(int i=0;i<subCorr;i++){
+        for (int i = 0; i < subCorr; i++) {
             subCorridors.add(new SubCorridor());
         }
 
