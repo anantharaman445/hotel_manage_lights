@@ -1,4 +1,4 @@
 package Corridors;
 
-public class MainCorridor {
+public class MainCorridor extends Corridor {
 }
