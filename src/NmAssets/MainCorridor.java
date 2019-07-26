@@ -12,8 +12,8 @@ public class MainCorridor extends Corridor {
 
     MainCorridor(int corridorId) {
         super(corridorId, corridorType);
-        this.light = new Light(EquipmentState.OFF);
-        this.airConditioner = new AirConditioner(EquipmentState.OFF);
+        this.light = new Light(EquipmentState.ON);
+        this.airConditioner = new AirConditioner(EquipmentState.ON);
     }
 
     public Light getLight() {

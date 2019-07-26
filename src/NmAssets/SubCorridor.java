@@ -1,6 +1,7 @@
 package NmAssets;
 
 import Enums.CorridorType;
+import Enums.EquipmentState;
 import Enums.SensorInpStates;
 import Equipments.AirConditioner;
 import Equipments.Light;
@@ -15,6 +16,8 @@ public class SubCorridor extends Corridor {
     SubCorridor(int corridorId) {
         super(corridorId, corridorType);
         this.sensorInpStates = SensorInpStates.DEFAULT;
+        this.light = new Light(EquipmentState.OFF);
+        this.airConditioner = new AirConditioner(EquipmentState.ON);
     }
 
     public SensorInpStates getSensorInpStates() {
