@@ -3,33 +3,29 @@ package NmAssets;
 import sun.applet.Main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Floor {
     private int floorId;
-    private List<MainCorridor> mainCorridors;
-    private  List<SubCorridor> subCorridors;
+
+    private HashMap<Integer, MainCorridor> mainCorridorHashMap;
+    private HashMap<Integer, SubCorridor> subCorridorHashMap;
 //    private int powerConsumptionLimitPerfloor;
 
-    Floor(int floorId, List<MainCorridor> mainCorridors, List<SubCorridor> subCorridors, int powerConsumptionLimitPerfloor){
-        this.floorId = floorId;
-        this.mainCorridors = mainCorridors;
-        this.subCorridors = subCorridors;
-//        this.powerConsumptionLimitPerfloor = powerConsumptionLimitPerfloor;
-    }
 
     public Floor(int floorId, Integer numberOfMainCorridor, Integer numberOfSubCorridors) {
         this.floorId = floorId;
-        mainCorridors = new ArrayList<>(numberOfMainCorridor);
+        mainCorridorHashMap = new HashMap<>(numberOfMainCorridor);
         for (Integer i = 1; i <= numberOfMainCorridor; i++) {
             MainCorridor mainCorridor = new MainCorridor(i);
-            mainCorridors.add(mainCorridor);
+            mainCorridorHashMap.put(i,mainCorridor);
         }
 
-        subCorridors = new ArrayList<>(numberOfSubCorridors);
+        subCorridorHashMap = new HashMap<>(numberOfSubCorridors);
         for (Integer i = 1; i <= numberOfSubCorridors; i++) {
             SubCorridor subCorridor = new SubCorridor(i);
-            subCorridors.add(subCorridor);
+            subCorridorHashMap.put(i, subCorridor);
         }
 
     }
@@ -38,12 +34,12 @@ public class Floor {
         return floorId;
     }
 
-    public List<MainCorridor> getMainCorridors() {
-        return mainCorridors;
+    public HashMap<Integer, MainCorridor> getMainCorridorHashMap() {
+        return mainCorridorHashMap;
     }
 
-    public List<SubCorridor> getSubCorridors() {
-        return subCorridors;
+    public HashMap<Integer, SubCorridor> getSubCorridorHashMap() {
+        return subCorridorHashMap;
     }
 
 //    public int getPowerConsumptionLimitPerfloor() {

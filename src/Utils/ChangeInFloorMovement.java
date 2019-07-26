@@ -17,7 +17,7 @@ public class ChangeInFloorMovement implements IChangeFloorMovement {
 
         iChangeLightStatus = new ChangeLightStatus();
 
-            SubCorridor  subCorridor = floor.getSubCorridors().get(subCorridorId);
+            SubCorridor  subCorridor = floor.getSubCorridorHashMap().get(subCorridorId);
 
                 subCorridor.setSensorInpStates(sensorInpStates);
                 iChangeLightStatus.changeLightStateForFloor(subCorridor);
@@ -28,8 +28,8 @@ public class ChangeInFloorMovement implements IChangeFloorMovement {
     public Floor changeSubCorridorAirConditionerStatus(Floor floor, int subCorridorId, SensorInpStates sensorInpStates){
         iChangeAirconditinerState = new ChangeAirConditionerStatus();
 
-        for(int i=1; i<= floor.getSubCorridors().size(); i++){
-            SubCorridor  subCorridor = floor.getSubCorridors().get(i);
+        for(int i=1; i<= floor.getMainCorridorHashMap().size(); i++){
+            SubCorridor  subCorridor = floor.getSubCorridorHashMap().get(i);
             if(SensorInpStates.MOVEMENT.equals(sensorInpStates)){
                 if(subCorridorId != subCorridor.getCorridorId()){
                     subCorridor.setSensorInpStates(SensorInpStates.NO_MOVEMENT);

@@ -1,20 +1,21 @@
 package NmAssets;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Hotel {
-    private List<Floor> floors;
+    private HashMap<Integer, Floor> floorHashMap;
 
     public Hotel(int noOfFloors, int noOfMainCorridors, int noOfSubCoridors){
-       floors = new ArrayList<>(noOfFloors);
+        floorHashMap = new HashMap<>(noOfFloors);
        for(int i=1; i<= noOfFloors; i++){
            Floor floor = new Floor(i, noOfMainCorridors, noOfSubCoridors);
-           floors.add(floor);
+           floorHashMap.put(i, floor);
        }
     }
 
-    public List<Floor> getFloors() {
-        return floors;
+    public HashMap<Integer, Floor> getFloorHashMap() {
+        return floorHashMap;
     }
 }
