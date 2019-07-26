@@ -1,5 +1,6 @@
 package Utils;
 
+import Enums.EquipmentState;
 import Enums.SensorInpStates;
 import NmAssets.Hotel;
 import org.junit.Before;
@@ -10,22 +11,31 @@ import static org.junit.Assert.assertTrue;
 public class UnitTests {
     private Hotel hotel;
     private IChangeFloorMovement iChangeFloorMovement;
+    private  ICheckFloorResults icheckFloorResults;
 
     @Before
     public void instantiate(){
-        hotel = new Hotel(2, 1, 2);
+        int noOfFloors = 2;
+        int noOfMainCorridors = 1;
+        int noOfSubCorridors = 2;
+        hotel = new Hotel(noOfFloors, noOfMainCorridors, noOfSubCorridors);
         iChangeFloorMovement = new ChangeInFloorMovement();
+        icheckFloorResults = new CheckFloorResults();
     }
 
     @Test
     public void movementTest(){
         iChangeFloorMovement.changeSubCorridorLightStatus(hotel.getFloorHashMap().get(1), 2, SensorInpStates.MOVEMENT);
         iChangeFloorMovement.changeSubCorridorAirConditionerStatus(hotel.getFloorHashMap().get(1), 2, SensorInpStates.MOVEMENT);
+        String floorLight = icheckFloorResults.checkSubCorridorLights(hotel.getFloorHashMap().get(1), 2);
+        assertTrue(EquipmentState.ON.toString().equals(floorLight));
     }
 
     @Test
     public void noMovementTests(){
         iChangeFloorMovement.changeSubCorridorLightStatus(hotel.getFloorHashMap().get(1), 2, SensorInpStates.NO_MOVEMENT);
         iChangeFloorMovement.changeSubCorridorAirConditionerStatus(hotel.getFloorHashMap().get(1), 2, SensorInpStates.NO_MOVEMENT);
+        String floorLight = icheckFloorResults.checkSubCorridorLights(hotel.getFloorHashMap().get(1), 2);
+        assertTrue(EquipmentState.OFF.toString().equals(floorLight));
     }
 }
