@@ -2,6 +2,7 @@ package NmAssets;
 
 import Enums.CorridorType;
 import Enums.EquipmentState;
+import Enums.TimeSlot;
 import Equipments.AirConditioner;
 import Equipments.Light;
 
@@ -12,6 +13,9 @@ public class MainCorridor extends Corridor {
 
     MainCorridor(int corridorId) {
         super(corridorId, corridorType);
+//        if(TimeSlot.DAY_TIME == timeslot)
+//            this.light = new Light(EquipmentState.OFF);
+//        else
         this.light = new Light(EquipmentState.ON);
         this.airConditioner = new AirConditioner(EquipmentState.ON);
     }
