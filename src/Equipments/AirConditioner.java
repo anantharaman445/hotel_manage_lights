@@ -8,7 +8,7 @@ public class AirConditioner extends Equipment {
     private static EquipmentType equipmentType = EquipmentType.AIR_CONDITIONER;
     private static int powerConsumption = 10;
 
-    protected AirConditioner(EquipmentState equipmentState) {
+    public AirConditioner(EquipmentState equipmentState) {
         super(equipmentType, equipmentState, powerConsumption);
     }
 

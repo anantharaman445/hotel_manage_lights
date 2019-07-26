@@ -25,4 +25,8 @@ public class Equipment {
     public int getPowerConsumption() {
         return powerConsumption;
     }
+
+    public void setEquipmentState(EquipmentState equipmentState) {
+        this.equipmentState = equipmentState;
+    }
 }

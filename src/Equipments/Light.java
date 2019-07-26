@@ -8,7 +8,7 @@ public class Light extends Equipment {
     private static EquipmentType equipmentType = EquipmentType.LIGHT;
     private static int powerConsumption = 5;
 
-    protected Light(EquipmentState equipmentState) {
+    public Light(EquipmentState equipmentState) {
         super(equipmentType, equipmentState, powerConsumption);
     }
 

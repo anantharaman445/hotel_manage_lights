@@ -9,17 +9,17 @@ public class Floor {
     private int floorId;
     private List<MainCorridor> mainCorridors;
     private  List<SubCorridor> subCorridors;
-    private int powerConsumptionLimitPerfloor;
+//    private int powerConsumptionLimitPerfloor;
 
     Floor(int floorId, List<MainCorridor> mainCorridors, List<SubCorridor> subCorridors, int powerConsumptionLimitPerfloor){
         this.floorId = floorId;
         this.mainCorridors = mainCorridors;
         this.subCorridors = subCorridors;
-        this.powerConsumptionLimitPerfloor = powerConsumptionLimitPerfloor;
+//        this.powerConsumptionLimitPerfloor = powerConsumptionLimitPerfloor;
     }
 
-    public Floor(Integer numberOfMainCorridor, Integer numberOfSubCorridors) {
-
+    public Floor(int floorId, Integer numberOfMainCorridor, Integer numberOfSubCorridors) {
+        this.floorId = floorId;
         mainCorridors = new ArrayList<>(numberOfMainCorridor);
         for (Integer i = 1; i <= numberOfMainCorridor; i++) {
             MainCorridor mainCorridor = new MainCorridor(i);
@@ -46,7 +46,7 @@ public class Floor {
         return subCorridors;
     }
 
-    public int getPowerConsumptionLimitPerfloor() {
-        return powerConsumptionLimitPerfloor;
-    }
+//    public int getPowerConsumptionLimitPerfloor() {
+//        return powerConsumptionLimitPerfloor;
+//    }
 }
