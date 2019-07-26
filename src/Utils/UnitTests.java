@@ -2,6 +2,7 @@ package Utils;
 
 import Enums.EquipmentState;
 import Enums.SensorInpStates;
+import Enums.TimeSlot;
 import NmAssets.Hotel;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +13,12 @@ public class UnitTests {
     private Hotel hotel;
     private IChangeFloorMovement iChangeFloorMovement;
     private  ICheckFloorResults icheckFloorResults;
+    private TimeSlot timeSlot;
 
     @Before
     public void instantiate(){
         int noOfFloors = 2;
+        timeSlot = TimeSlot.NIGHT_TIME;
         int noOfMainCorridors = 1;
         int noOfSubCorridors = 2;
         hotel = new Hotel(noOfFloors, noOfMainCorridors, noOfSubCorridors);

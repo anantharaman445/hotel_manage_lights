@@ -16,9 +16,6 @@ public class SubCorridor extends Corridor {
     SubCorridor(int corridorId) {
         super(corridorId, corridorType);
         this.sensorInpStates = SensorInpStates.DEFAULT;
-//        if(TimeSlot.DAY_TIME == timeslot)
-//            this.light = new Light(EquipmentState.OFF);
-//        else
         this.light = new Light(EquipmentState.OFF);
         this.airConditioner = new AirConditioner(EquipmentState.ON);
     }

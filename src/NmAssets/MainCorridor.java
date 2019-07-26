@@ -13,9 +13,6 @@ public class MainCorridor extends Corridor {
 
     MainCorridor(int corridorId) {
         super(corridorId, corridorType);
-//        if(TimeSlot.DAY_TIME == timeslot)
-//            this.light = new Light(EquipmentState.OFF);
-//        else
         this.light = new Light(EquipmentState.ON);
         this.airConditioner = new AirConditioner(EquipmentState.ON);
     }
