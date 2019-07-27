@@ -1,5 +1,6 @@
 package Utils;
 
+import Enums.EquipmentState;
 import Enums.SensorInpStates;
 import NmAssets.Floor;
 import NmAssets.SubCorridor;
@@ -21,7 +22,7 @@ public class ChangeInFloorMovement implements IChangeFloorMovement {
 
                 subCorridor.setSensorInpStates(sensorInpStates);
                 iChangeLightStatus.changeLightStateForFloor(subCorridor);
-
+        if(subCorridor.getLight().getEquipmentState().equals(EquipmentState.ON)) floor.setTotalPowerConsumed(floor.getTotalPowerConsumed()+ 5);
         return floor;
     }
 
@@ -41,6 +42,7 @@ public class ChangeInFloorMovement implements IChangeFloorMovement {
                 subCorridor.setSensorInpStates(SensorInpStates.DEFAULT);
                 iChangeAirconditinerState.changeAirConditionerStateForSubCorridor(subCorridor);
             }
+            if(subCorridor.getAirConditioner().getEquipmentState().equals(EquipmentState.ON)) floor.setTotalPowerConsumed(floor.getTotalPowerConsumed()+ 5);
 
         }
         return floor;
