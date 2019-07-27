@@ -18,6 +18,7 @@ public class Floor {
     public Floor(int floorId, Integer numberOfMainCorridor, Integer numberOfSubCorridors) {
         this.floorId = floorId;
         this.powerConsumptionLimitPerfloor = numberOfMainCorridor*15 + numberOfSubCorridors*10;
+
         mainCorridorHashMap = new HashMap<>(numberOfMainCorridor);
         for (Integer i = 1; i <= numberOfMainCorridor; i++) {
             MainCorridor mainCorridor = new MainCorridor(i);
