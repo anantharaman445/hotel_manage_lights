@@ -11,11 +11,13 @@ public class Floor {
 
     private HashMap<Integer, MainCorridor> mainCorridorHashMap;
     private HashMap<Integer, SubCorridor> subCorridorHashMap;
-//    private int powerConsumptionLimitPerfloor;
+    private float powerConsumptionLimitPerfloor;
+    private float totalPowerConsumed;
 
 
     public Floor(int floorId, Integer numberOfMainCorridor, Integer numberOfSubCorridors) {
         this.floorId = floorId;
+        this.powerConsumptionLimitPerfloor = numberOfMainCorridor*15 + numberOfSubCorridors*10;
         mainCorridorHashMap = new HashMap<>(numberOfMainCorridor);
         for (Integer i = 1; i <= numberOfMainCorridor; i++) {
             MainCorridor mainCorridor = new MainCorridor(i);
@@ -42,7 +44,15 @@ public class Floor {
         return subCorridorHashMap;
     }
 
-//    public int getPowerConsumptionLimitPerfloor() {
-//        return powerConsumptionLimitPerfloor;
-//    }
+    public float getPowerConsumptionLimitPerfloor() {
+        return powerConsumptionLimitPerfloor;
+    }
+
+    public float getTotalPowerConsumed() {
+        return totalPowerConsumed;
+    }
+
+    public void setTotalPowerConsumed(float totalPowerConsumed) {
+        this.totalPowerConsumed = totalPowerConsumed;
+    }
 }
